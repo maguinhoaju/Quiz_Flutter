@@ -11,14 +11,14 @@ class PerguntaApp extends StatefulWidget {
 }
 
 class _PerguntaAppState extends State<PerguntaApp> {
-  var respostaSelecionada = 0;
+  var _respostaSelecionada = 0;
 
   void responder() {
     setState(() {
-      respostaSelecionada++;
+      _respostaSelecionada++;
     });
     if (kDebugMode) {
-      print('Resposta selecionada: $respostaSelecionada');
+      print('Resposta selecionada: $_respostaSelecionada');
     }
   }
 
@@ -34,7 +34,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
         appBar: AppBar(title: const Text('Perguntas'), centerTitle: true),
         body: Column(
           children: [
-            Text(perguntas[respostaSelecionada]),
+            Text(perguntas[_respostaSelecionada]),
             ElevatedButton(
               onPressed: responder,
               child: const Text('Resposta 1'),
